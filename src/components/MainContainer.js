@@ -6,6 +6,7 @@ export default class MainContainer extends Component {
   constructor () {
     super()
     this.state = {
+
       location: [],
       events: [{
         name: "react",
@@ -28,16 +29,30 @@ export default class MainContainer extends Component {
     render () {
       console.log(this.state.location);
       
+
+      location: '',
+      events: []
+    }
+  }
+
+  updateLocation = location => {
+    this.setState({
+      location: location
+    })
+  }
+  render () {
+
     const { location } = this.state
     const { events } = this.state
+
     return (
       <div className='main-container'>
-          {/* <NavBar /> */}
-          {/* <h1>{this.state.location.name}</h1>
-          <img src={this.state.location.picture} alt="name"/>
-          <h3>{this.state.location.address}</h3> */}
-          <CardContainer location={location} events={events}/>
-          {/* <CardContainer events={this.props.events} /> */}
+
+
+        {console.log(this.state.location)}
+        <NavBar location={location} updateLocation={this.updateLocation} />
+        <CardContainer location={location} events={events} />
+
       </div>
     )
   }

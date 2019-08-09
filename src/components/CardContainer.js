@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './Card'
 
+
  const CardContainer = (props) => {
         
     // const place = props.map(place => {
@@ -21,3 +22,5 @@ import Card from './Card'
 
 
 export default CardContainer;
+
+
