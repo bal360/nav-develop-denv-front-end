@@ -1,20 +1,29 @@
 import React, { Component } from 'react'
+import NavBar from './NavBar'
+import CardContainer from './CardContainer'
 
 export default class MainContainer extends Component {
   constructor () {
     super()
     this.state = {
-      location: 'Zeppelin Station',
-      events: ['event 1', 'event 2', 'event 3', 'event 4']
+      location: '',
+      events: []
     }
   }
 
+  updateLocation = location => {
+    this.setState({
+      location: location
+    })
+  }
   render () {
     const { location } = this.state
     const { events } = this.state
+
     return (
       <div className='main-container'>
-        <NavBar />
+        {console.log(this.state.location)}
+        <NavBar location={location} updateLocation={this.updateLocation} />
         <CardContainer location={location} events={events} />
       </div>
     )

@@ -1,33 +1,32 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css?family=Megrim%7CRoboto+Mono:400,700&display=swap');
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url(https://developdenver.org/img/ballmer-peak.jpeg);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar {
+  color: white;
+  background-color: black;
+  font-family: 'Megrim', sans-serif;
+  font-weight: bold;
+  font-size: 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar div li {
+  padding-left: 50px;
+}
+
+.navbar div li:hover {
+  cursor: pointer;
+}
+
+.navbar img {
+  height: 60px;
+  width: 60px;
 }
