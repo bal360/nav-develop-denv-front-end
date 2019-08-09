@@ -1,3 +1,5 @@
 import React, { Component } from 'react'
 
-export default class Attributes extends Component {}
+export default class Attributes extends Component {
+    
+}
