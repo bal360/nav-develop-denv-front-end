@@ -6,7 +6,7 @@ The data was seeded to a backend rails api linked below.
 
 [Backend](https://github.com/jollyjerr/nav-develop-denv-api/tree/master)
 
-
+Team:
 - [Ricardo Ortega](https://github.com/rj-ortega)
 - [Blake Long](https://githubt.com/bal360)
 - [Fekade Senbeta](https://github.com/fekadesenbeta)
