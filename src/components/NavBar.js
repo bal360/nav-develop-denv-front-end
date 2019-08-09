@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-
 export default class NavBar extends Component {
   constructor (props) {
     super(props)
@@ -13,16 +12,17 @@ export default class NavBar extends Component {
     this.setState({
       location: !this.state.location
     })
-    console.log(location)
     this.props.updateLocation(location)
+    this.props.filterEvents(location)
   }
 
   render () {
-    console.log()
     return (
       <div>
         <nav className='navbar navbar-expand-lg navbar '>
-          <img src='https://developdenver.org/img/spinning_happy.6dcd176a.gif' />
+          <a href='http://localhost:3001'>
+            <img src='https://developdenver.org/img/spinning_happy.6dcd176a.gif' />
+          </a>
           <button
             className='navbar-toggler'
             type='button'
@@ -38,40 +38,45 @@ export default class NavBar extends Component {
             <ul className='navbar-nav'>
               <li className='nav-item'>
                 <span
-                  onClick={event => this.handleClick(event.target.innerHTML)}
+                  onClick={event => this.handleClick(event.target.id)}
                   className='location'
+                  id='1'
                 >
                   THE SOURCE HOTEL
                 </span>
               </li>
               <li className='nav-item'>
                 <span
-                  onClick={event => this.handleClick(event.target.innerHTML)}
+                  onClick={event => this.handleClick(event.target.id)}
                   className='location'
+                  id='2'
                 >
                   CATALYST
                 </span>
               </li>
               <li className='nav-item'>
                 <span
-                  onClick={event => this.handleClick(event.target.innerHTML)}
+                  onClick={event => this.handleClick(event.target.id)}
                   className='location'
+                  id='5'
                 >
                   BIGSBYS FOLLY
                 </span>
               </li>
               <li className='nav-item'>
                 <span
-                  onClick={event => this.handleClick(event.target.innerHTML)}
+                  onClick={event => this.handleClick(event.target.id)}
                   className='location'
+                  id='3'
                 >
-                  ZEPPELIN STATION
+                  BIG TROUBLE
                 </span>
               </li>
               <li className='nav-item'>
                 <span
-                  onClick={event => this.handleClick(event.target.innerHTML)}
+                  onClick={event => this.handleClick(event.target.id)}
                   className='location'
+                  id='4'
                 >
                   HELIKON
                 </span>
@@ -83,4 +88,3 @@ export default class NavBar extends Component {
     )
   }
 }
-

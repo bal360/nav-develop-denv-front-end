@@ -1,26 +1,10 @@
 import React from 'react'
 import Card from './Card'
 
-
- const CardContainer = (props) => {
-        
-    // const place = props.map(place => {
-        
-    //     return <Card location={place.location} event=         {place.events} />
-    //     }
-    // )
-    console.log(props);
-    
-    
-    return(
-        <div className="card-container">
-            {}
-        </div>
-    )
-    
-  }
-
-
-export default CardContainer;
-
-
+const CardContainer = props => {
+  const cards = props.filteredEvents.map(event => {
+    return <Card event={event} key={event.id} />
+  })
+  return <React.Fragment>{cards}</React.Fragment>
+}
+export default CardContainer

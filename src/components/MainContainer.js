@@ -6,33 +6,20 @@ export default class MainContainer extends Component {
   constructor () {
     super()
     this.state = {
-
-      location: [],
-      events: [{
-        name: "react",
-        speaker: "steph",
-        url: "url.com",
-        location: "The Source"
-      }]
-    }
-  }
-
-  componentDidMount(){
-    fetch('http://localhost:3000/api/v1/locations')
-      .then(response => response.json())
-      .then(res => this.setState({
-        location: res
-      }))
-  }
-
-
-    render () {
-      console.log(this.state.location);
-      
-
       location: '',
-      events: []
+      events: [],
+      filteredEvents: []
     }
+  }
+
+  componentDidMount () {
+    fetch('http://localhost:3000/api/v1/events')
+      .then(res => res.json())
+      .then(res =>
+        this.setState({
+          events: res
+        })
+      )
   }
 
   updateLocation = location => {
@@ -40,19 +27,31 @@ export default class MainContainer extends Component {
       location: location
     })
   }
-  render () {
 
+  filterEvents = locationID => {
+    let filteredEvents = this.state.events.filter(event => {
+      let eventName = event.location_id.toString()
+      return eventName.includes(locationID)
+    })
+
+    this.setState({
+      filteredEvents: filteredEvents
+    })
+  }
+
+  render () {
+    console.log('the one', this.state.filteredEvents)
     const { location } = this.state
     const { events } = this.state
-
     return (
       <div className='main-container'>
-
-
         {console.log(this.state.location)}
-        <NavBar location={location} updateLocation={this.updateLocation} />
-        <CardContainer location={location} events={events} />
-
+        <NavBar
+          location={location}
+          filterEvents={this.filterEvents}
+          updateLocation={this.updateLocation}
+        />
+        <CardContainer filteredEvents={this.state.filteredEvents} />
       </div>
     )
   }
