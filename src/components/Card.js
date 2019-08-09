@@ -1,3 +1,11 @@
 import React, { Component } from 'react'
 
-export default class Card extends Component {}
+export default class Card extends Component {
+    render() {
+        return(
+
+        <p>hi</p>
+        )
+    }
+
+};
